@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
@@ -20,15 +20,15 @@ function App() {
         const resposta = await fetch(`${API_URL}/livros`);
 
         if (!resposta.ok) {
-          throw new Error("Não foi possível carregar os livros.");
+          throw new Error("NÃ£o foi possÃ­vel carregar os livros.");
         }
 
         const resultado = await resposta.json();
         setLivros(resultado.dados ?? resultado);
         setMensagem("");
-      } catch (erro) {
+      } catch {
         setMensagem(
-          "Não foi possível carregar os livros. Verifique se a API está funcionando."
+          "NÃ£o foi possÃ­vel carregar os livros. Verifique se a API estÃ¡ funcionando."
         );
       }
     }
@@ -85,8 +85,8 @@ function App() {
         <section className="status-conexao">
           <span>
             {conectado
-              ? "🟢 Conectado em tempo real"
-              : "🔴 Desconectado do servidor"}
+              ? "ðŸŸ¢ Conectado em tempo real"
+              : "ðŸ”´ Desconectado do servidor"}
           </span>
         </section>
 
@@ -117,3 +117,4 @@ function App() {
 }
 
 export default App;
+
